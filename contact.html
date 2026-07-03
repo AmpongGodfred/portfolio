@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Godfred Ampong</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/contact.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ── NAVBAR ───────────────────────────────────────────── -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">Godfred<span>.</span></a>
+    <button class="hamburger" id="hamburger-btn">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PAGE HERO ────────────────────────────────────────── -->
+  <section class="page-hero fade-in">
+    <h1>Get In <span style="color: var(--accent)">Touch</span></h1>
+    <div class="underline"></div>
+    <p>Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+  </section>
+
+  <!-- ── CONTACT MAIN ──────────────────────────────────────── -->
+  <main class="contact-main fade-in">
+    <div class="container contact-grid">
+
+      <!-- ── LEFT: Contact Info ─────────────────────────────── -->
+      <div class="contact-info">
+
+        <h2>Let's <span class="text-purple">Connect</span></h2>
+        <p class="contact-intro">
+          I'm currently open to freelance projects, full-time
+          opportunities, and collaborations. Feel free to reach
+          out through any of the channels below.
+        </p>
+
+        <!-- Info cards -->
+        <div class="info-cards">
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-text">
+              <h4>Email</h4>
+              <!-- Replace with your actual email -->
+              <a href="mailto:amponggdfrd@email.com">
+                amponggdfrd@email.com
+              </a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="info-text">
+              <h4>GitHub</h4>
+              <a href="https://github.com/AmpongGodfred" target="_blank">
+                github.com/AmpongGodfred
+              </a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="info-text">
+              <h4>LinkedIn</h4>
+              <!-- Replace with your actual LinkedIn URL -->
+              <a href="https://linkedin.com/in/godfred-ampong" target="_blank">
+                linkedin.com/in/godfred-ampong
+              </a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-text">
+              <h4>Location</h4>
+              <p>Tarkwa, Western Region, Ghana</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Availability badge -->
+        <div class="availability">
+          <span class="availability-dot"></span>
+          Available for freelance & full-time opportunities
+        </div>
+
+      </div>
+      <!-- ── END LEFT ────────────────────────────────────────── -->
+
+
+      <!-- ── RIGHT: Contact Form ────────────────────────────── -->
+      <div class="contact-form-wrapper">
+
+        <!-- Success message (hidden by default, shown by JS) -->
+        <div class="form-success" id="form-success">
+          <i class="fas fa-check-circle"></i>
+          <h3>Message Sent!</h3>
+          <p>Thanks for reaching out. I'll get back to you soon.</p>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name"
+                     placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email"
+                     placeholder="john@email.com" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject"
+                   placeholder="Project inquiry, collaboration, etc."
+                   required/>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6"
+                      placeholder="Tell me about your project or just say hello..."
+                      required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+
+        </form>
+      </div>
+      <!-- ── END RIGHT ───────────────────────────────────────── -->
+
+    </div>
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>© 2024 <span>Godfred Ampong</span> · Built with 💜 and Flask</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

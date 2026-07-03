@@ -1,0 +1,294 @@
+/* ============================================================
+   style.css — Godfred Ampong | Portfolio
+   Organised by: Variables → Reset → Typography → 
+                 Navbar → Buttons → Footer → Utilities
+   ============================================================ */
+
+
+/* ── CSS VARIABLES (change these to retheme the whole site) ── */
+:root {
+  --primary:       #6a0dad;   /* main purple */
+  --primary-dark:  #550a9e;   /* darker purple for hovers */
+  --primary-light: #f0e6ff;   /* very light purple for backgrounds */
+  --accent:        #f4a261;   /* orange accent (logo highlight) */
+  --text-dark:     #1a1a2e;   /* near black for headings */
+  --text-mid:      #444444;   /* mid grey for body text */
+  --text-light:    #777777;   /* light grey for subtitles */
+  --white:         #ffffff;
+  --bg-light:      #f8f6ff;   /* page background */
+  --border:        #e0d4f7;   /* light purple border */
+  --shadow:        0 4px 20px rgba(106, 13, 173, 0.12);
+  --radius:        10px;      /* border radius used everywhere */
+  --transition:    all 0.3s ease;
+  --font-main:     'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --max-width:     1100px;    /* max content width */
+}
+
+
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;  /* smooth scrolling when clicking anchor links */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-mid);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ── TYPOGRAPHY ───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+/* clamp(min, preferred, max) — font scales with screen size */
+
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: 1.2rem; }
+
+p  { font-size: 1rem; color: var(--text-mid); }
+
+
+/* ── SECTION LAYOUT ───────────────────────────────────────── */
+.section {
+  padding: 80px 5%;
+  flex: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+/* Decorative purple line under section titles */
+.section-header .underline {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto 14px;
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--text-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Centres content and limits max width */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+/* ── NAVBAR ───────────────────────────────────────────────── */
+.navbar {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 65px;
+  position: sticky;    /* stays at top when you scroll */
+  top: 0;
+  z-index: 1000;       /* always on top of other elements */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.navbar-logo span {
+  color: var(--accent);  /* orange highlight on logo */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+
+/* ── BUTTONS ──────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 13px 30px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);   /* lifts button up slightly on hover */
+  box-shadow: 0 6px 25px rgba(106, 13, 173, 0.25);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 13px 30px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.footer {
+  background-color: var(--primary);
+  color: rgba(255, 255, 255, 0.9);  /* brighter white text */
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.88rem;
+}
+
+.footer span {
+  color: var(--accent);
+}
+
+
+/* ── UTILITY CLASSES ──────────────────────────────────────── */
+.text-purple { color: var(--primary); }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+
+
+/* ── PAGE FADE-IN ANIMATION ───────────────────────────────── */
+/* Every page fades in smoothly when it loads */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+
+/* ── MOBILE RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 5%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding: 10px 0;
+    align-items: flex-start;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 8px;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}

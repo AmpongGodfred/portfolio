@@ -1,0 +1,183 @@
+/* projects.css — styles specific to the Projects page */
+
+
+/* ── PAGE HERO (reused from about) ───────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #9b59b6 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.page-hero .underline {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+.page-hero p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem;
+}
+
+
+/* ── PROJECTS MAIN ────────────────────────────────────────── */
+.projects-main {
+  padding: 60px 5%;
+  flex: 1;
+}
+
+/* 3-column grid on desktop, 1 column on mobile */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+
+/* ── PROJECT CARD ─────────────────────────────────────────── */
+.project-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;          /* clips the banner to the card's rounded corners */
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);   /* lifts card on hover */
+  box-shadow: 0 12px 35px rgba(106, 13, 173, 0.18);
+}
+
+/* Coming soon card is slightly muted */
+.project-card.coming-soon {
+  opacity: 0.75;
+}
+
+
+/* ── PROJECT BANNER (coloured top section) ────────────────── */
+.project-banner {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.banner-purple { background: linear-gradient(135deg, var(--primary), #9b59b6); }
+.banner-teal   { background: linear-gradient(135deg, #17a2b8, #1abc9c); }
+.banner-amber  { background: linear-gradient(135deg, #f39c12, #e67e22); }
+
+
+/* ── PROJECT BODY ─────────────────────────────────────────── */
+.project-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;                   /* makes all cards equal height */
+}
+
+.project-title {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;                   /* pushes tags and buttons to bottom */
+}
+
+
+/* ── TECH STACK TAGS ──────────────────────────────────────── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-tags span {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+
+/* ── PROJECT ACTION BUTTONS ───────────────────────────────── */
+.project-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-actions .btn-primary,
+.project-actions .btn-outline {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* ── CTA SECTION ──────────────────────────────────────────── */
+.projects-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #9b59b6 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.projects-cta h2 {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.projects-cta p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 20px;
+}
+
+.projects-cta .btn-primary {
+  background-color: var(--white);
+  color: var(--primary);
+  display: inline-block;
+}
+
+.projects-cta .btn-primary:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+
+/* ── MOBILE ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,321 @@
+/* about.css — styles specific to the About page */
+
+
+/* ── PAGE HERO ────────────────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #9b59b6 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.page-hero .underline {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+.page-hero p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem;
+}
+
+
+/* ── ABOUT MAIN ───────────────────────────────────────────── */
+.about-main {
+  flex: 1;
+}
+
+
+/* ── BIO SECTION ──────────────────────────────────────────── */
+.about-bio {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  padding: 70px 5%;
+}
+
+.bio-image {
+  flex-shrink: 0;
+}
+
+.bio-photo-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--primary-light), var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--primary);
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.bio-role {
+  color: var(--primary);
+  font-weight: 500;
+  margin: 6px 0 16px;
+  font-size: 1rem;
+}
+
+/* Quick info pills */
+.bio-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.bio-pills span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+
+/* ── TIMELINE ─────────────────────────────────────────────── */
+.timeline-section {
+  padding: 60px 5%;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  margin: 0 5% 40px;
+  box-shadow: var(--shadow);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* The vertical line running down the timeline */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Circular icon on the timeline */
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  position: absolute;
+  left: -40px;
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.timeline-icon.experience {
+  background-color: #f39c12;
+  box-shadow: 0 0 0 4px #fef9e7;
+}
+
+.timeline-icon.web {
+  background-color: #17a2b8;
+  box-shadow: 0 0 0 4px #e8f8fa;
+}
+
+.timeline-content {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  flex: 1;
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  box-shadow: var(--shadow);
+  transform: translateX(4px);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+  margin: 6px 0 2px;
+  font-size: 1.05rem;
+}
+
+.timeline-content h4 {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+
+/* ── SKILLS SECTION ───────────────────────────────────────── */
+.skills-section {
+  padding: 60px 5%;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.skill-category {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-bar-item {
+  margin-bottom: 18px;
+}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+}
+
+.skill-bar-track {
+  background-color: var(--primary-light);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #9b59b6);
+  border-radius: 10px;
+  width: 0%;              /* starts at 0, animated by JS */
+  transition: width 1.2s ease;
+}
+
+
+/* ── INTERESTS SECTION ────────────────────────────────────── */
+.interests-section {
+  padding: 60px 5%;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  margin: 0 5% 60px;
+  box-shadow: var(--shadow);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.interest-card {
+  background-color: var(--primary-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.interest-card:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.interest-card i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  display: block;
+  transition: var(--transition);
+}
+
+.interest-card:hover i {
+  color: var(--white);
+}
+
+.interest-card p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.interest-card:hover p {
+  color: var(--white);
+}
+
+
+/* ── MOBILE ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-pills {
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline-section,
+  .interests-section {
+    margin: 0 0 30px;
+    border-radius: 0;
+  }
+}
